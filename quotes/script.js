@@ -1,33 +1,57 @@
 // const apiKey = '4924c1dac13e9a62ade74773fa5883eb';
 // const apiUrl = `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&language=fr-FR`;
 
+// Pour mes fleches 
+const arrowLeft = document.querySelector('.arrow_left'); // Flèche gauche
+const arrowRight = document.querySelector('.arrow_right'); // Flèche droite
+let index = 0
+
+// arrowLeft.addEventListener('click', () => {
+
+//     if (index === -1) {
+//         index = quote
+//     }
+// })
+
+// arrowRight.addEventListener('click', () => {
+//     if (index === quote) {
+//         index = 0
+//     }
+// })
+
+
+
 async function getQuotes() {
     const url = 'https://dummyjson.com/quotes/random'
     const response = await fetch(url)
-    const data = await response.json()
+    const data = await response.json() 
 
-    displayQuote(data)
+    return data
 }
 
-function displayQuote (quotes) {
-    let quoteRamdom = getQuotes()
+async function displayQuote() {
+    let quoteRamdom = await getQuotes()
+    // console.log(getQuotes());
+    
     console.log('koko');
-    
+    console.log(quoteRamdom.id);
+
     const quoteContainer = document.getElementById('quote-container')
-    quoteContainer.innerHTML = ""
+    const paraQuote = document.createElement('p')
+    paraQuote.classList.add('paraQuote')
+    paraQuote.innerHTML = quoteRamdom.quote
 
-    console.log(quotes);
-    
-    for (let i = 0; i < quoteRamdom.length; i++){
-        console.log('kokoooo');
-        
-        let divQuote = document.createElement('div')
-        divQuote.classList.add('quote')
+    const paraAuthor = document.createElement('p')
+    paraAuthor.classList.add('paraAuthor')
+    paraAuthor.innerHTML = quoteRamdom.author 
 
-        quoteContainer.appendChild(divQuote)
-        return quoteRamdom()
-    }
+    quoteContainer.appendChild(paraQuote)
+    quoteContainer.appendChild(paraAuthor)
+
+
+    return quoteRamdom
 }
+
 displayQuote()
 
 
