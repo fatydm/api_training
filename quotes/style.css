@@ -1,0 +1,37 @@
+body{
+    display: flex;
+    flex-direction: column;
+}
+
+h1{
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-decoration: underline;
+}
+
+#quote-container {
+    display: flex; 
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center; 
+
+}
+
+.quote {
+    border: 1px solid;
+    padding: 20px; 
+    text-align: center; 
+}
+
+.quote:first-child {
+    display: block;
+}
+
+#searchBar{
+    text-align: center;
+    width: 100%;
+    height: 30px;
+    margin-bottom: 30px ;
+    
+
+}
