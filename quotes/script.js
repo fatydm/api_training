@@ -39,7 +39,7 @@ async function displayQuote() {
     const quoteContainer = document.getElementById('quote-container')
     const paraQuote = document.createElement('p')
     paraQuote.classList.add('paraQuote')
-    paraQuote.innerHTML = quoteRamdom.quote
+    paraQuote.innerHTML = `" ${quoteRamdom.quote} "`
 
     const paraAuthor = document.createElement('p')
     paraAuthor.classList.add('paraAuthor')

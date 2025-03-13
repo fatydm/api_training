@@ -1,37 +1,73 @@
-body{
+body {
+    background-color: rgb(153, 120, 183);
     display: flex;
     flex-direction: column;
 }
 
-h1{
+h1 {
     text-align: center;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     text-decoration: underline;
+    font-family: "Playwrite IN";
+    font-optical-sizing: auto;
+    color: rgb(73, 10, 73);
+}
+
+#searchBar {
+    text-align: center;
+    margin-left: 25%;
+    width: 50%;
+    height: 30px;
+    margin-bottom: 30px;
+    border: none;
+    background-color: rgb(186, 154, 186);
 }
 
 #quote-container {
-    display: flex; 
+    display: flex;
     flex-direction: column;
-    justify-content: center; 
-    align-items: center; 
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border: 3px solid purple;
+    height: 200px;
 
 }
 
-.quote {
-    border: 1px solid;
-    padding: 20px; 
-    text-align: center; 
-}
-
-.quote:first-child {
-    display: block;
-}
-
-#searchBar{
+.paraQuote{
     text-align: center;
-    width: 100%;
-    height: 30px;
-    margin-bottom: 30px ;
-    
+    font-weight: 700;
+    font-style: italic;
+}
 
+#carrousel{
+    position: relative;
+}
+
+.arrow_left {
+    height: 60px;
+    width: 40px;
+    position: absolute;
+    left: 10px;
+    top: 70px;
+    cursor: pointer;
+}
+
+.arrow_right {
+    height: 60px;
+    width: 40px;
+    position: absolute;
+    right: 10px;
+    top: 70px;
+    cursor: pointer;
+}
+
+.footer{
+    text-align: center;
+    font-size: 0.8rem;
+}
+.footer a{
+    text-decoration: none;
+    font-style: italic;
+    color: black;
+    cursor: pointer;
 }
