@@ -1,26 +1,6 @@
 // const apiKey = '4924c1dac13e9a62ade74773fa5883eb';
 // const apiUrl = `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&language=fr-FR`;
 
-// Pour mes fleches 
-const arrowLeft = document.querySelector('.arrow_left'); // Flèche gauche
-const arrowRight = document.querySelector('.arrow_right'); // Flèche droite
-let index = 0
-
-// arrowLeft.addEventListener('click', () => {
-
-//     if (index === -1) {
-//         index = quote
-//     }
-// })
-
-// arrowRight.addEventListener('click', () => {
-//     if (index === quote) {
-//         index = 0
-//     }
-// })
-
-
-
 async function getQuotes() {
     const url = 'https://dummyjson.com/quotes/random'
     const response = await fetch(url)
@@ -29,6 +9,8 @@ async function getQuotes() {
     return data
 }
 
+const quoteContainer = document.getElementById('quote-container')
+
 async function displayQuote() {
     let quoteRamdom = await getQuotes()
     // console.log(getQuotes());
@@ -36,7 +18,6 @@ async function displayQuote() {
     console.log('koko');
     console.log(quoteRamdom.id);
 
-    const quoteContainer = document.getElementById('quote-container')
     const paraQuote = document.createElement('p')
     paraQuote.classList.add('paraQuote')
     paraQuote.innerHTML = `" ${quoteRamdom.quote} "`
@@ -48,11 +29,45 @@ async function displayQuote() {
     quoteContainer.appendChild(paraQuote)
     quoteContainer.appendChild(paraAuthor)
 
-
     return quoteRamdom
 }
 
 displayQuote()
+
+
+// ADDEVENTLISTENER
+
+// const shuffle = document.querySelector('#shuffle')
+
+// shuffle.addEventListener('click', () => {
+//     quoteContainer.innerHTML = ''    
+//     displayQuote()
+// })
+
+const arrowLeft = document.querySelector('.arrow_left'); 
+const arrowRight = document.querySelector('.arrow_right');
+let index = 0
+
+arrowLeft.addEventListener('click', () => {  
+    quoteContainer.innerHTML = ''    
+    displayQuote()
+})
+
+arrowRight.addEventListener('click', () => {
+    quoteContainer.innerHTML = '' 
+    displayQuote()
+})
+
+// Créer un tableau avec un compteur qui stocke le ramdon
+
+
+
+
+
+
+
+
+
 
 
 
@@ -83,19 +98,13 @@ displayQuote()
 
 // getQuotes()
 
-const searchBar = document.getElementById("searchBar")
-searchBar.addEventListener('input', () => {
-
-    const query = searchBar.value.trim()
-    getQuotes(query)
-})
-
-// const input = document.getElementById('quotes')
-
-// input.addEventListener('input', () => {
-//     let userInput = input.value
-//     console.log(userInput);
-//     const query = userInput
+// const searchBar = document.getElementById("searchBar")
+// searchBar.addEventListener('input', () => {
+//     console.log('je suis la');
+    
+//     let userQuery = searchBar.value.trim().toLowerCase()
+//     const query = userQuery
+//     console.log(query);
+    
 //     getQuotes(query)
 // })
-

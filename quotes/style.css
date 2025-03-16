@@ -12,16 +12,6 @@ h1 {
     color: rgb(73, 10, 73);
 }
 
-#searchBar {
-    text-align: center;
-    margin-left: 25%;
-    width: 50%;
-    height: 30px;
-    margin-bottom: 30px;
-    border: none;
-    background-color: rgb(186, 154, 186);
-}
-
 #quote-container {
     display: flex;
     flex-direction: column;
@@ -30,11 +20,11 @@ h1 {
     position: relative;
     border: 3px solid purple;
     height: 200px;
-
 }
 
 .paraQuote{
     text-align: center;
+    font-size: 1.3rem;
     font-weight: 700;
     font-style: italic;
 }
@@ -44,22 +34,25 @@ h1 {
 }
 
 .arrow_left {
-    height: 60px;
-    width: 40px;
+    height: 20px;
+    width: 100px;
     position: absolute;
     left: 10px;
-    top: 70px;
+    bottom: 0px;
     cursor: pointer;
+    font-size: 2em;
 }
 
 .arrow_right {
-    height: 60px;
-    width: 40px;
+    height: 20px;
+    width: 10px;
     position: absolute;
     right: 10px;
-    top: 70px;
+    bottom: 0px;
     cursor: pointer;
+    font-size: 2em;
 }
+
 
 .footer{
     text-align: center;
